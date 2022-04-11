@@ -1,14 +1,12 @@
 .table {
   display: flex;
-  margin: 2px 2px;
-}
+  margin: 2px 2px; }
 
 .mainTable {
   background-color: lightgreen;
   width: 65%;
   border: 2px solid black;
-  border-radius: 20px;
-}
+  border-radius: 20px; }
 
 .buttonTable {
   background-color: mediumseagreen;
@@ -19,5 +17,9 @@
   right: 2px;
   width: 34%; }
 
+h1 {
+  font-size: 10px;
+  color: #363636;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */
