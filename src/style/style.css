@@ -1,0 +1,23 @@
+.table {
+  display: flex;
+  margin: 2px 2px;
+}
+
+.mainTable {
+  background-color: lightgreen;
+  width: 65%;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.buttonTable {
+  background-color: mediumseagreen;
+  border: 2px solid black;
+  border-radius: 20px;
+  position: fixed;
+  top: 2px;
+  right: 2px;
+  width: 34%; }
+
+
+/*# sourceMappingURL=style.css.map */

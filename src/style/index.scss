@@ -1,0 +1,25 @@
+
+.table{
+  display: inline-flex;
+}
+
+.mainTable{
+  background-color: lightgreen;
+  width: 65%;
+  border: 2px solid black;
+  border-radius: 20px;
+
+}
+
+.buttonTable{
+  background-color: mediumseagreen;
+  border: 2px solid black;
+  border-radius: 20px;
+  position: fixed;
+  top:0;
+  right:0;
+  width: 35%;
+}
+
+div{
+}
