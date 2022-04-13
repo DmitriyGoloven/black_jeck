@@ -26,14 +26,14 @@ module.exports = {
                 use: 'babel-loader',
             },
             {
-
                 test: /\.(png|jpe?g|gif)$/i,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'img',
-                    esModule: false,
+                    esModule: false,}
+
                 },
-            },
+
         ],
     },
 };

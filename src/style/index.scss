@@ -69,3 +69,22 @@ h1, h2 {
   padding-top: 9px;
 
 }
+.players{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.player {
+  display: flex;
+  width: 180px;
+  height: 280px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 50px 50px;
+  font-size: 20px;
+  justify-content: center;
+  background: white;
+
+}
