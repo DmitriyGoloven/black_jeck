@@ -68,12 +68,15 @@ h1, h2 {
 
 .player {
   display: flex;
+  flex-direction: column;
   width: 180px;
   height: 280px;
   border: 2px solid black;
   border-radius: 10px;
   margin: 50px 50px;
-  font-size: 20px;
+  font-size: 25px;
+  color: #06870a;
+  font-weight: bold;
   justify-content: center;
   background: white; }
 
