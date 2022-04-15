@@ -1,6 +1,4 @@
-import { Player } from './player'
 import { shuffle, Card } from './card'
-
 
 class Game {
 
@@ -9,7 +7,6 @@ class Game {
         this.activePlayer = null
         this.cardDeck = shuffle()
         this.addPlayer(players)
-
     }
 
     addPlayer(players) {
@@ -18,10 +15,6 @@ class Game {
         }
         this.activePlayer = players[0]
     }
-
-
-
-
 }
 
 export {Game}

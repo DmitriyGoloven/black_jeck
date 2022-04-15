@@ -13,17 +13,16 @@ class Card{
         this.picture = picture
         this.count = count
     }
-
 }
 
 function shuffle() {
     let cardDeck = []
     cardsArr.sort(() => Math.random() - 0.5)
+
     for (let i = 0; i < cardsArr.length; i++) {
         cardDeck.push(new Card(cardsArr[i][0],cardsArr[i][1]))
     }
     return cardDeck
 }
-
 
 export {shuffle, Card}

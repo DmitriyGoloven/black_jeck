@@ -1,4 +1,3 @@
-import { game } from './game'
 
 class Player {
     scores = 0;
@@ -25,7 +24,6 @@ class Player {
             this.cards.push(this.game.cardDeck.shift())
             this.scoreSum()
 
-
     }
     hit(){
         this.cards.push(this.game.cardDeck.shift())
@@ -34,7 +32,11 @@ class Player {
         this.scoreSum()
 
     }
+    nextPlayer(){
+        if((this.game.players.indexOf(this) + 1) !== this.game.players.length) {
+            this.game.activePlayer = this.game.players[this.game.players.indexOf(this) + 1];
+        }
+    }
 }
-
 
 export {Player}
