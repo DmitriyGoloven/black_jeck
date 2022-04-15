@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <title>Black Jack</title>
 </head>
-<body class="table">
+<body id="body">
+<div class="table">
     <main class="mainTable">
         <h1>Black Jack</h1>
         <div id="players" class="players">
@@ -14,10 +15,11 @@
     <aside class="buttonTable">
         <h2>Cards</h2>
         <div class="panel">
-            <img class="img" src="<%= require('./img/koloda.png') %>" alt="koloda kart">
+            <img class="img" src="<%= require('./img/koloda.png') %>" alt="Card deck">
             <button class="hit">HIT</button>
             <button class="stand">STAND</button>
         </div>
     </aside>
+</div>
 </body>
 </html>

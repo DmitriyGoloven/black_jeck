@@ -1,6 +1,8 @@
-import { shuffle, Card } from './card'
+import {shuffle} from './card'
 
 class Game {
+    losers = []
+    winners = []
 
     constructor(players) {
         this.players = players

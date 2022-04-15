@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: row;
   margin: 2px 2px;
-  height: 98vh; }
+  height: 98vh;
+  z-index: 1; }
 
 .mainTable {
   display: block;
@@ -13,7 +14,8 @@
   min-height: 98vh;
   background-color: #06870a;
   border: 2px solid black;
-  border-radius: 20px; }
+  border-radius: 20px;
+  z-index: 0; }
 
 .buttonTable {
   display: flex;
@@ -25,7 +27,9 @@
   top: 2px;
   right: 2px;
   width: 25%;
-  height: 98vh; }
+  min-width: 150px;
+  height: 98vh;
+  z-index: 1; }
 
 h1, h2 {
   font-size: 35px;
@@ -37,9 +41,9 @@ h1, h2 {
   margin: 50px auto;
   height: 30vh; }
 
-.stand {
+.stand, .hit {
   display: flex;
-  width: 140px;
+  width: 120px;
   height: 45px;
   border: 2px solid black;
   border-radius: 45px;
@@ -48,18 +52,12 @@ h1, h2 {
   justify-content: center;
   background: #06870a;
   padding-top: 9px; }
-
-.hit {
-  display: flex;
-  width: 140px;
-  height: 45px;
-  border: 2px solid black;
-  border-radius: 45px;
-  margin: 10px auto;
-  font-size: 20px;
-  justify-content: center;
-  background: #06870a;
-  padding-top: 9px; }
+  .stand:hover, .hit:hover {
+    background-color: darkolivegreen;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.9); }
+  .stand:active, .hit:active {
+    background: #06870a;
+    box-shadow: none; }
 
 .players {
   display: flex;
@@ -69,15 +67,59 @@ h1, h2 {
 .player {
   display: flex;
   flex-direction: column;
-  width: 180px;
+  width: 200px;
   height: 280px;
   border: 2px solid black;
   border-radius: 10px;
+  box-shadow: 8px 5px 5px darkslategray;
   margin: 50px 50px;
-  font-size: 20px;
-  color: #06870a;
+  font-size: 25px;
   font-weight: bold;
   justify-content: center;
   background: white; }
+
+.cardImg {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 50px; }
+
+.divModal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -150px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 8px 5px 5px rgba(0, 0, 0, 0.9);
+  justify-content: space-around;
+  z-index: 3; }
+
+.divModalBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8); }
+
+.modalContent {
+  font-size: 30px;
+  font-weight: bold; }
+
+.modalButton {
+  width: 150px;
+  height: 80px;
+  border: 2px solid green;
+  border-radius: 5px;
+  font-size: 30px;
+  justify-content: center;
+  background-color: lightgreen; }
 
 /*# sourceMappingURL=index.css.map */
