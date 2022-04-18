@@ -2,8 +2,6 @@ import './style/index.scss';
 import {Player} from './player'
 import {Game} from './game'
 
-const gamePlayers = [new Player(), new Player(), new Player()]
-
 let game = new Game([new Player(), new Player(), new Player()])
 
 const body = document.getElementById('body');
@@ -29,7 +27,9 @@ function drawPlayer(player) {
 
     cardimg.textContent = player.cardImg
     cardimg.classList.add('cardImg')
+    cardimg.id = `${player.id} + cardImg`
     score.textContent = 'Score: ' + player.scores
+    score.id = `${player.id} + score`
     name.textContent = player.name
 
     div.className = 'player'
@@ -43,33 +43,23 @@ function drawPlayer(player) {
 
 givePlayer(game.players)
 hitButton.addEventListener('click', () => {
-
-    if (game.activePlayer.scores > 21) {
-        game.losers.push(game.activePlayer)
-        game.activePlayer.nextPlayer()
-    } else if (game.activePlayer.scores === 21) {
-        game.winners.push(game.activePlayer)
-        game.activePlayer.nextPlayer()
-    }
-
+    game.checkScoreHit()
     game.activePlayer.hit();
     drawPlayerHit(game.activePlayer)
 })
 
 function drawPlayerHit(player) {
-    const newDiv = document.getElementById(player.id);
+    const score = document.getElementById(`${player.id} + score`)
+    score.textContent = 'Score:' + game.activePlayer.scores
+    const cardimg = document.getElementById(`${player.id} + cardImg`)
+    cardimg.textContent = game.activePlayer.cardImg
 
-    newDiv.children[1].textContent = 'Score:' + game.activePlayer.scores
-    newDiv.children[2].textContent = game.activePlayer.cardImg
 }
 
 standButton.addEventListener('click', () => {
-
-    if (game.activePlayer.scores <= 21) {
-        game.winners.push(game.activePlayer)
-        game.activePlayer.nextPlayer()
-    }
+    game.checkScoreStand()
 });
+
 const modal = document.createElement('div')
 const divModalBackground = document.createElement('div');
 const divModal = document.createElement('div');
@@ -93,5 +83,5 @@ function createModalWindow() {
 
 // modalBackground.addEventListener('click', ()=>{window.location.reload()})
 
-export {game, gamePlayers, createModalWindow, modalContent}
+export {game, createModalWindow, modalContent}
 

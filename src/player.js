@@ -45,7 +45,6 @@ class Player {
     }
 
     checkWinner() {
-        console.log(game.winners)
 
         if (game.winners.length === 0) {
             modalContent.textContent = "NO winners"
@@ -55,9 +54,7 @@ class Player {
                 return player.scores
             })
 
-            console.log(scoreWinners)
             let winner = scoreWinners.indexOf(Math.max(...scoreWinners))
-            console.log(winner)
             modalContent.textContent = `${game.winners[winner].name}` + ' WINNER'
             createModalWindow()
         }

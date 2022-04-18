@@ -1,4 +1,5 @@
 import {shuffle} from './card'
+import {game} from "./index";
 
 class Game {
     losers = []
@@ -16,6 +17,22 @@ class Game {
             this.players[i].game = this;
         }
         this.activePlayer = players[0]
+    }
+    checkScoreHit(){
+        if (game.activePlayer.scores > 21) {
+            game.losers.push(game.activePlayer)
+            game.activePlayer.nextPlayer()
+        } else if (game.activePlayer.scores === 21) {
+            game.winners.push(game.activePlayer)
+            game.activePlayer.nextPlayer()
+        }
+
+    }
+    checkScoreStand(){
+        if (game.activePlayer.scores <= 21) {
+            game.winners.push(game.activePlayer)
+            game.activePlayer.nextPlayer()
+        }
     }
 }
 
